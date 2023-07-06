@@ -793,7 +793,7 @@ TEST(matrixd, dot_product_test) {
                 for (auto k = 0; k < 100; ++k) {
                     for (auto l = 0; l < 5; ++l) {
                         for (auto n = 0; n < 4; ++n) {
-                            ASSERT_TRUE(std::abs(m[i][j][k][l][n] - 1280.07) < 0.001);
+                            ASSERT_TRUE(std::abs(m[i][j][k][l][n] - 1280.07f) < 0.01f);
                         }
                     }
                 }
@@ -810,7 +810,7 @@ TEST(matrixd, dot_product_test) {
                 for (auto k = 0; k < 100; ++k) {
                     for (auto l = 0; l < 5; ++l) {
                         for (auto n = 0; n < 4; ++n) {
-                            ASSERT_TRUE(std::abs(m[i][j][k][l][n] - 1280.07) < 0.001);
+                            ASSERT_TRUE(std::abs(m[i][j][k][l][n] - 1280.07f) < 0.01f);
                         }
                     }
                 }
@@ -827,7 +827,7 @@ TEST(matrixd, dot_product_test) {
                 for (auto k = 0; k < 100; ++k) {
                     for (auto l = 0; l < 5; ++l) {
                         for (auto n = 0; n < 4; ++n) {
-                            ASSERT_TRUE(std::abs(m[i][j][k][l][n] - 1280.07) < 0.001);
+                            ASSERT_TRUE(std::abs(m[i][j][k][l][n] - 1280.07f) < 0.01f);
                         }
                     }
                 }
