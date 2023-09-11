@@ -15,10 +15,10 @@ static constexpr int crit_compl = 1e6;
 namespace impl {
 
 template <int ... sizes_and_offsets>
-constexpr inline int volume = 1;
+constexpr inline int64_t volume = 1;
 
 template <int abs_size, int abs_offset, int offset, int size, int ... tail>
-constexpr inline int volume<abs_size, abs_offset, offset, size, tail ...> = size * volume<tail ...>;
+constexpr inline int64_t volume<abs_size, abs_offset, offset, size, tail ...> = size * volume<tail ...>;
 
 template <int ... sizes_and_offsets>
 constexpr inline auto extracted_abs_sizes = std::make_tuple();

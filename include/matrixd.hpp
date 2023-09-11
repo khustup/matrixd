@@ -3,6 +3,7 @@
 #include "impl/matrixd_impl.hpp"
 
 #include <cassert>
+#include <cstdint>
 #include <span>
 
 namespace khustup {
@@ -24,9 +25,9 @@ struct matrix_impl<T, abs_size, abs_offset, offset, size, tail ...>
 
     static constexpr inline int dimensions = sizeof...(tail) / 4 + 1;
 
-    static constexpr inline int volume = size * matrix_impl<T, tail ...>::volume;
+    static constexpr inline int64_t volume = size * matrix_impl<T, tail ...>::volume;
 
-    static constexpr inline int absolute_volume = abs_size * matrix_impl<T, tail ...>::absolute_volume;
+    static constexpr inline int64_t absolute_volume = abs_size * matrix_impl<T, tail ...>::absolute_volume;
 
     static constexpr inline auto sizes = extracted_sizes<abs_size, abs_offset, offset, size, tail ...>;
 
@@ -634,9 +635,9 @@ struct matrix_impl<T, abs_size, abs_offset, offset, size>
 
     static constexpr inline int dimensions = 1;
 
-    static constexpr inline int volume = size;
+    static constexpr inline int64_t volume = size;
 
-    static constexpr inline int absolute_volume = abs_size;
+    static constexpr inline int64_t absolute_volume = abs_size;
 
     static constexpr inline auto sizes = std::make_tuple(size);
 
